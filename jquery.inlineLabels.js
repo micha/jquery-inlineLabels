@@ -31,65 +31,79 @@
       var state   = -1;
       var fade    = baselineOpacity || 0.5; // default 50% opacity
 
-      // 'hover' state, slightly faded label
-      function state1(event) {
-        state = 1;
-        label.fadeTo(0,fade/2);
-      }
-        
-      // 'normal' state, unfaded label
-      function state2(event) {
-        state = 2;
+      // state machine
+      var state = [
+        // dummy
+        function() {},
+
+        // 'hover' state, slightly faded label
+        function() {
+          state = 1;
+          label.fadeTo(0,fade/2);
+        },
+          
+        // 'normal' state, unfaded label
+        function() {
+          state = 2;
+          label.fadeTo(0,fade);
+        },
+          
+        // slightly faded, this state is entered after input is focussed
+        function() {
+          state = 3;
+          label.fadeTo(0,fade/2);
+        },
+          
+        // completely faded, user date is present in input
+        function() {
+          state = 4;
+          label.fadeTo(0,0);
+        }
+      ];
+
+      function flash() {
         label.fadeTo(0,fade);
-      }
-        
-      // slightly faded, this state is entered after input is focussed
-      function state3(event) {
-        state = 3;
-        label.fadeTo(0,fade/2);
-      }
-        
-      // completely faded, user date is present in input
-      function state4(event) {
-        state = 4;
-        label.fadeTo(0,0);
+        input.fadeTo(0,0);
       }
         
       // state transition map
       input.hover(
-        function(event) {
-          if (state < 3) state1(event);
+        function() {
+          if (state < 3) state[1]();
         },
-        function(event) {
-          if (state < 3) state2(event);
+        function() {
+          if (state < 3) state[2]();
         }
       ).focus(
-        function(event) {
-          if (state < 3) state3(event);
+        function() {
+          if (state < 3)
+            state[3]();
+          else
+            flash();
         }
       ).keyup(
-        function(event) {
+        function() {
           if (input.val().length > 0)
-            state4(event);
+            state[4]();
           else
-            state3(event);
+            state[3]();
         }
       ).blur(
-        function(event) {
+        function() {
           if (state >= 3 && input.val().length == 0)
-            state2(event);
+            state[2]();
         }
       );
 
       // initialize state machine
-      state2.call(input, {});
+      state[2]();
 
       var intervalCount = 20;
       var t = setInterval(function() {
         if (intervalCount--) {
           if (state != 4 && input.val().length > 0) {
             intervalCount = 0;
-            state4.call(input, {});
+            state[4]();
           }
           console.log("length: "+input.val().length);
         } else {

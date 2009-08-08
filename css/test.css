@@ -7,7 +7,7 @@ body {
 }
 
 form.awesome span.wrap 
-    { position: relative; margin-bottom: 2em; }
+    { position: relative; display: block; }
 form.awesome span.wrap label	 
     { position: absolute; 
       left: 2px; 
@@ -25,12 +25,11 @@ form.awesome span.wrap label span
     { position: relative; 
       top: 1px; 
       left: 1px; 
-      padding-left: 20px;
-      }
+      padding-left: 20px; }
 form.awesome input.input-text 
     { font-size: 18px; 
       padding: 0 22px;
-      top: 10px;
+      top: 4px;
       background: none; 
       position: relative; 
       z-index: 10; 
@@ -38,4 +37,4 @@ form.awesome input.input-text
       border: none;
       font-weight: normal;
       font-family: Helvetica;
-     }
+      outline: none; }

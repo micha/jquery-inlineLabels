@@ -74,6 +74,7 @@
           }
         },
 
+        // 'flash' the label briefly
         function() {
           console.log("flash");
           if ($.inlineLabels.flash) {

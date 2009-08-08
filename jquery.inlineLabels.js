@@ -96,10 +96,10 @@
             intervalCount = 0;
             state4.call(input, {});
           }
+          console.log("length: "+input.val().length);
         } else {
           clearInterval(t);
         }
-        console.log("length: "+input.val().length);
       }, 100);
 
     });

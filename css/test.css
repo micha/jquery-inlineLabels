@@ -7,7 +7,7 @@ body {
 }
 
 form.awesome span.wrap 
-    { position: relative; }
+    { position: relative; margin-bottom: 2em; }
 form.awesome span.wrap label	 
     { position: absolute; 
       left: 2px; 

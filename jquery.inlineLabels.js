@@ -64,6 +64,7 @@
       function flash() {
         label.fadeTo(0,fade);
         input.fadeTo(0,0);
+        setTimeout(function() { states[state]() },1000);
       }
         
       // state transition map

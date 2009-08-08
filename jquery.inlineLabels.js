@@ -85,9 +85,15 @@
 
       // initialize state machine
       if (input.val().length > 0)
-        state4.call(this, {});
+        state4.call(input, {});
       else
-        state2.call(this, {});
+        state2.call(input, {});
+
+      setTimeout(function() {
+        if (state != 4 && input.val().length > 0) 
+          state4.call(input, {});
+      }, 500);
+
     });
 
     return this;

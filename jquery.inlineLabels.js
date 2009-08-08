@@ -25,7 +25,7 @@
    */
 
   $.fn.inlineLabels = function(baselineOpacity) {
-    $(this).each(function() {
+    $(this).eq(0).each(function() {
       var label   = $("label span", this);
       var input   = $("input", this);
       var state   = -1;

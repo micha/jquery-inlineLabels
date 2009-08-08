@@ -81,8 +81,6 @@
         }
       );
 
-      console.log("the length is "+input.val().length);
-
       // initialize state machine
       if (input.val().length > 0)
         state4.call(input, {});

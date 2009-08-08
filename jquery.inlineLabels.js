@@ -90,10 +90,14 @@
         state2.call(input, {});
 
       var intervalCount = 20;
-      setInterval(function() {
-        if (intervalCount-- > 0 && state != 4 && input.val().length > 0) {
-          intervalCount = 0;
-          state4.call(input, {});
+      var t = setInterval(function() {
+        if (intervalCount--) {
+          if (state != 4 && input.val().length > 0) {
+            intervalCount = 0;
+            state4.call(input, {});
+          }
+        } else {
+          clearInterval(t);
         }
         console.log("length: "+input.val().length);
       }, 100);

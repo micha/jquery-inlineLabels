@@ -89,7 +89,7 @@
       else
         state2.call(input, {});
 
-      setTimeout(function() {
+      setInterval(function() {
         if (state != 4 && input.val().length > 0) 
           state4.call(input, {});
       }, 500);

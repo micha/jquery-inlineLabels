@@ -82,10 +82,7 @@
       );
 
       // initialize state machine
-      if (input.val().length > 0)
-        state4.call(input, {});
-      else
-        state2.call(input, {});
+      state2.call(input, {});
 
       var intervalCount = 20;
       var t = setInterval(function() {

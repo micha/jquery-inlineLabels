@@ -6,9 +6,6 @@ body {
 	margin-top: 6em;
 }
 
-
-
-
 form.awesome span.wrap 
     { position: relative; }
 form.awesome span.wrap label	 
@@ -42,15 +39,3 @@ form.awesome input.input-text
       font-weight: normal;
       font-family: Helvetica;
      }
-	
-label.overlay span 
-    { opacity: 0.4; 
-      -webkit-transition: opacity 200ms linear; }
-
-label.focus span 
-    { opacity: 0.2; }
-      
-label.hastext span 
-    { opacity: 0.0; 
-      -webkit-transition: opacity 0ms linear; }
-*/

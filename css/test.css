@@ -1,0 +1,56 @@
+/* @override http://brikolodge.local/css/test.css */
+
+body {
+	background: #ddd;
+	height: 100%;
+	margin-top: 6em;
+}
+
+
+
+
+form.awesome span.wrap 
+    { position: relative; }
+form.awesome span.wrap label	 
+    { position: absolute; 
+      left: 2px; 
+      top: 0; 
+      font-size: 18px; 
+      font-weight: normal; 
+      width: 264px; height: 30px; 
+      background: #fff; 
+      -webkit-border-radius: 2px; 
+      -moz-border-radius: 2px; 
+      z-index: 1; 
+      line-height: 28px;
+      font-family: Helvetica; }
+form.awesome span.wrap label span 
+    { position: relative; 
+      top: 1px; 
+      left: 1px; 
+      padding-left: 20px;
+      }
+form.awesome input.input-text 
+    { font-size: 18px; 
+      padding: 0 22px;
+      top: 10px;
+      background: none; 
+      position: relative; 
+      z-index: 10; 
+      margin: 0;
+      border: none;
+      font-weight: normal;
+      font-family: Helvetica;
+     }
+	
+label.overlay span 
+    { opacity: 0.4; 
+      -webkit-transition: opacity 200ms linear; }
+
+label.focus span 
+    { opacity: 0.2; }
+      
+label.hastext span 
+    { opacity: 0.0; 
+      -webkit-transition: opacity 0ms linear; }
+*/

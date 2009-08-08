@@ -1,0 +1,57 @@
+/* @override http://brikolodge.org/css/offline.css */
+
+/* -------------------------------------------------------------- 
+
+   style.css
+   
+-------------------------------------------------------------- */
+
+body {
+	margin-top: 100px;
+	background: #DBDBDB url(/images/interface/offline_bg.png) repeat-x;
+}
+
+h1 {
+	background: url(/images/interface/offline_logo.png) no-repeat top left;
+	text-indent: -9999px;
+	height: 83px;
+	padding-bottom: .5em;
+	border-bottom: solid 1px #8f0f00;
+}
+
+h2 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}
+
+#wrapper {
+	background: #b90000;
+	padding-bottom: 5em;
+	padding-top: 5em;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 20px #666;
+}
+
+#content {
+	color: #fff;
+}
+
+#content a {
+	color: #fff;
+	background: #8f0f00;
+	padding: 1em;
+	display: inline-block;
+	text-decoration: none;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	
+}
+
+#content a:hover {
+	color: #fff;
+	background: #e26700;
+	-webkit-box-shadow: 0px 0px 2px #666;
+}

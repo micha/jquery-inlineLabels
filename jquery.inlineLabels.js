@@ -32,7 +32,7 @@
       var fade    = baselineOpacity || 0.5; // default 50% opacity
 
       // state machine
-      var state = [
+      var states = [
         // dummy
         function() {},
 
@@ -69,41 +69,41 @@
       // state transition map
       input.hover(
         function() {
-          if (state < 3) state[1]();
+          if (state < 3) states[1]();
         },
         function() {
-          if (state < 3) state[2]();
+          if (state < 3) states[2]();
         }
       ).focus(
         function() {
           if (state < 3)
-            state[3]();
+            states[3]();
           else
             flash();
         }
       ).keyup(
         function() {
           if (input.val().length > 0)
-            state[4]();
+            states[4]();
           else
-            state[3]();
+            states[3]();
         }
       ).blur(
         function() {
           if (state >= 3 && input.val().length == 0)
-            state[2]();
+            states[2]();
         }
       );
 
       // initialize state machine
-      state[2]();
+      states[2]();
 
       var intervalCount = 20;
       var t = setInterval(function() {
         if (intervalCount--) {
           if (state != 4 && input.val().length > 0) {
             intervalCount = 0;
-            state[4]();
+            states[4]();
           }
           console.log("length: "+input.val().length);
         } else {

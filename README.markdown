@@ -1,3 +1,4 @@
-==Inline Labels In Form Fields==
+Inline Labels In Form Fields
+============================
 
 [Demo.](http://micha.github.com/jquery-inlineLabels)

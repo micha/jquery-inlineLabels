@@ -40,7 +40,6 @@
 
         // 'hover' state, slightly faded label
         function() {
-          console.log("state: 1");
           if (state != 5) {
             state = 1;
             label.fadeTo(0,fade/2);
@@ -49,7 +48,6 @@
           
         // 'normal' state, unfaded label
         function() {
-          console.log("state: 2");
           if (state != 5) {
             state = 2;
             label.fadeTo(0,fade);
@@ -58,7 +56,6 @@
           
         // slightly faded, this state is entered after input is focussed
         function() {
-          console.log("state: 3");
           if (state != 5) {
             state = 3;
             label.fadeTo(0,fade/2);
@@ -67,7 +64,6 @@
           
         // completely faded, user date is present in input
         function() {
-          console.log("state: 4");
           if (state != 5) {
             state = 4;
             label.fadeTo(0,0);
@@ -76,7 +72,6 @@
 
         // 'flash' the label briefly
         function() {
-          console.log("flash");
           if ($.inlineLabels.flash) {
             var oldstate = state;
             state = 5;
@@ -94,16 +89,13 @@
       // state transition map
       input.hover(
         function() {
-          console.log("hover-in");
           if (state < 3) states[1]();
         },
         function() {
-          console.log("hover-out");
           if (state < 3) states[2]();
         }
       ).focus(
         function() {
-          console.log("focus");
           if (state < 3)
             states[3]();
           else if (input.val().length > 0)
@@ -111,7 +103,6 @@
         }
       ).keyup(
         function() {
-          console.log("keyup");
           if (input.val().length > 0)
             states[4]();
           else
@@ -119,7 +110,6 @@
         }
       ).blur(
         function() {
-          console.log("blur");
           if (state >= 3 && input.val().length == 0)
             states[2]();
         }
@@ -135,7 +125,6 @@
             intervalCount = 0;
             states[4]();
           }
-          console.log("length: "+input.val().length);
         } else {
           clearInterval(t);
         }

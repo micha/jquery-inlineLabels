@@ -113,11 +113,6 @@
           if (state >= 3 && input.val().length == 0)
             states[2]();
         }
-      ).change(
-        function() {
-          if (state >= 3 && input.val().length == 0)
-            states[2]();
-        }
       );
 
       // initialize state machine

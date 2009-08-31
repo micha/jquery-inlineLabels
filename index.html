@@ -17,6 +17,9 @@
     $(function() {
       $.inlineLabels.flash = false;
       $("form.awesome span.wrap").inlineLabels(0.4);
+      $("form").submit(function() {
+        return false;
+      });
     });
   </script>
 
@@ -36,7 +39,7 @@
       <input class="input-text" name="pass" type="password" />
     </span>
     <br />
-    <input type="reset" value="Log In" />
+    <input type="submit" value="Log In" />
   </form>
 
 </body>
